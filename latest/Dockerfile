@@ -13,7 +13,12 @@ ENV IB_GATEWAY_RELEASE_CHANNEL=latest
 ENV IBC_VERSION=3.16.0
 
 # Prepare system
+# RUN apt-get clean all
 RUN apt-get update -y
+# RUN apt-get upgrade -y
+# RUN apt-get dist-upgrade -y
+# RUN dpkg -l | grep ^..r | apt-get purge
+# RUN apt-get update -y
 RUN apt-get install --no-install-recommends --yes \
   curl \
   ca-certificates \
